@@ -15,7 +15,7 @@ build.gradle of Project
   Add these dependency in your build.gradle of app module
   
 	dependencies {
-		implementation 'com.github.BHIMNATH:AndroAlert:a2c044a5a4'
+			implementation 'com.github.BHIMNATH:AndroAlert:19361f7d19'
 	}
 
 [![](https://jitpack.io/v/BHIMNATH/AndroAlert.svg)](https://jitpack.io/#BHIMNATH/AndroAlert)
