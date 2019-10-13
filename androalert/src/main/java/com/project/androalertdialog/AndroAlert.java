@@ -18,6 +18,7 @@ import java.util.List;
 
 public class AndroAlert extends Dialog {
     Context context;
+    AlertDialog alertDialog;
     public AndroAlert(Context context) {
         super(context);
         this.context = context;
@@ -46,15 +47,15 @@ public class AndroAlert extends Dialog {
         builder.setView(dialogView);
 
 
-        AlertDialog alertDialog = builder.create();
+        alertDialog = builder.create();
         alertDialog.show();
     }
 
     public void onSuccessOkClick() {
-        this.dismiss();
+        alertDialog.dismiss();
     }
     public void onErrorOkClick() {
-        this.dismiss();
+        alertDialog.dismiss();
     }
 
     public void alertMessageError(String message){
