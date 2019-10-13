@@ -4,13 +4,16 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class AndroAlert extends Dialog {
-    String message;
-    private static int SIMPLE_ALERT = 1;
+    Context context;
     protected AndroAlert(Context context) {
         super(context);
+        this.context = context;
     }
 
     protected AndroAlert(Context context, boolean cancelable, OnCancelListener cancelListener) {
@@ -21,15 +24,46 @@ public class AndroAlert extends Dialog {
         super(context, themeResId);
     }
 
-    public static void alertMessage(Context context, String message,int alertType){
+    public void alertMessageSuccess(String message){
         ViewGroup viewGroup;
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+        //before inflating the custom alert dialog layout, we will get the current activity viewgroup
+        viewGroup = findViewById(android.R.id.content);
 
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this.context).inflate(R.layout.android_alert_layout, viewGroup, false);
+        TextView msg = dialogView.findViewById(R.id.alert_message);
+
+        msg.setText(message);
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+    public void alertMessageError(String message){
+        ViewGroup viewGroup;
+        //before inflating the custom alert dialog layout, we will get the current activity viewgroup
+        viewGroup = findViewById(android.R.id.content);
+
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this.context).inflate(R.layout.alert_error, viewGroup, false);
+        TextView msg = dialogView.findViewById(R.id.alert_error_message);
+
+        msg.setText(message);
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+
+        //finally creating the alert dialog and displaying it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.android_alert_layout);
-    }
+
 }
