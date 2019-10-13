@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class AndroAlert extends Dialog {
     Context context;
-    protected AndroAlert(Context context) {
+    public AndroAlert(Context context) {
         super(context);
         this.context = context;
     }
