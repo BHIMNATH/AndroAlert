@@ -40,7 +40,7 @@ public class AndroAlert extends Dialog {
         //setting the view of the builder to our custom view that we already inflated
         builder.setView(dialogView);
 
-        //finally creating the alert dialog and displaying it
+
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
