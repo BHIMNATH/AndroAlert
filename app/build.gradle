@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+version '1.0'
 android {
     compileSdkVersion 29
     defaultConfig {
