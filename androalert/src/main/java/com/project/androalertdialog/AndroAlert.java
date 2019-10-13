@@ -54,7 +54,7 @@ public class AndroAlert extends Dialog {
         TextView msg = dialogView.findViewById(R.id.alert_error_message);
 
         msg.setText(message);
-        //Now we need an AlertDialog.Builder object
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
 
         //setting the view of the builder to our custom view that we already inflated
