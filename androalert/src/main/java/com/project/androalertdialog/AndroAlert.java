@@ -17,8 +17,8 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 public class AndroAlert extends Dialog {
-    Context context;
-    AlertDialog alertDialog;
+    public Context context;
+    public AlertDialog alertDialog;
     public AndroAlert(Context context) {
         super(context);
         this.context = context;
@@ -82,7 +82,7 @@ public class AndroAlert extends Dialog {
         builder.setView(dialogView);
 
         //finally creating the alert dialog and displaying it
-        AlertDialog alertDialog = builder.create();
+        alertDialog = builder.create();
         alertDialog.show();
     }
 }
