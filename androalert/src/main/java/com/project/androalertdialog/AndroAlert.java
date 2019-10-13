@@ -1,4 +1,4 @@
-package com.project.androalert;
+package com.project.androalertdialog;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -29,7 +29,7 @@ public class AndroAlert extends Dialog {
         //before inflating the custom alert dialog layout, we will get the current activity viewgroup
         viewGroup = findViewById(android.R.id.content);
 
-        //then we will inflate the custom alert dialog xml that we created
+        //then we will inflate the custom alert dialog layout that we created
         View dialogView = LayoutInflater.from(this.context).inflate(R.layout.android_alert_layout, viewGroup, false);
         TextView msg = dialogView.findViewById(R.id.alert_message);
 
@@ -49,7 +49,7 @@ public class AndroAlert extends Dialog {
         //before inflating the custom alert dialog layout, we will get the current activity viewgroup
         viewGroup = findViewById(android.R.id.content);
 
-        //then we will inflate the custom alert dialog xml that we created
+        //then we will inflate the custom alert dialog layout that we created
         View dialogView = LayoutInflater.from(this.context).inflate(R.layout.alert_error, viewGroup, false);
         TextView msg = dialogView.findViewById(R.id.alert_error_message);
 

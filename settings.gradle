@@ -1,1 +1,1 @@
-include ':app', ':androalertdialog'
+include ':app', ':androalert'
